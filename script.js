@@ -33,15 +33,15 @@
 
 let compChoice
 function getComputerChoice() {
-    
-    
+
+
     num = Math.random()
-    
+
     if (num <= 0.33333333) {
-         compChoice = 'Rock';
+        compChoice = 'Rock';
     } else if (num <= 0.66666666) {
-         compChoice = 'Paper';
-    } else  compChoice = 'Scissors';
+        compChoice = 'Paper';
+    } else compChoice = 'Scissors';
     console.log(compChoice)
     return
 
@@ -57,64 +57,63 @@ function getPlayerChoice() {
     playerSelection = prompt('Rock, Paper or Scissors?');
 
 
-        if (playerSelection.toLowerCase() == 'rock') {
-            playerSelection = 'Rock';   
-        } else if (playerSelection.toLowerCase() == 'paper') {
-            playerSelection = 'Paper';
-        } else if (playerSelection.toLowerCase() == 'scissors') {
-            playerSelection = 'Scissors';
-        } else playerSelection = 'Please type either "Rock", "Paper" or "Scissors" ';
-        
-     
-
-    }
+    if (playerSelection.toLowerCase() == 'rock') {
+        playerSelection = 'Rock';
+    } else if (playerSelection.toLowerCase() == 'paper') {
+        playerSelection = 'Paper';
+    } else if (playerSelection.toLowerCase() == 'scissors') {
+        playerSelection = 'Scissors';
+    } else getPlayerChoice();
 
 
 
-    console.log(playerSelection)
+}
 
 
-let result
 
-    function playRound(playerSelection, compChoice) {
+console.log(playerSelection)
 
-        if (playerSelection == 'Rock' && (compChoice == 'Rock')) {
-            return result = 'You picked Rock and drew with Rock'
-        } else if (playerSelection == 'Rock' && (compChoice == 'Paper')) {
-            return result = 'You picked Rock and lost to Paper'
-        } else if (playerSelection == 'Rock' && (compChoice == 'Scissors')) {
-            return result = 'You picked Rock and beat Scissors!'
-        } else if (playerSelection == 'Paper' && (compChoice == 'Rock')) {
-            return result = 'You picked Paper and beat Rock! '
-        } else if (playerSelection == 'Paper' && (compChoice == 'Paper')) {
-            return result = 'You picked Paper and drew with Paper'
-        } else if (playerSelection == 'Paper' && (compChoice == 'Scissors')) {
-            return result = 'You picked Paper and lost to Scissors'
-        } else if (playerSelection == 'Scissors' && (compChoice == 'Rock')) {
-            return result = 'You picked Scissors and lost to Rock'
-        } else if (playerSelection == 'Scissors' && (compChoice == 'Paper')) {
-            return result = 'You picked Scissors and beat Paper!'
-        } else if (playerSelection == 'Scissors' && (compChoice == 'Scissors')) {
-            return result = 'You picked Scissors and drew with Scissors'
-        } 
 
-   
-    }
+let result = "";
+function playRound(playerSelection, compChoice) {
 
-    playRound(playerSelection, compChoice)
+    if (playerSelection == 'Rock' && (compChoice == 'Rock')) {
+        return result = 'You picked Rock and drew with Rock'
+    } else if (playerSelection == 'Rock' && (compChoice == 'Paper')) {
+        return result = 'You picked Rock and lost to Paper'
+    } else if (playerSelection == 'Rock' && (compChoice == 'Scissors')) {
+        return result = 'You picked Rock and beat Scissors!'
+    } else if (playerSelection == 'Paper' && (compChoice == 'Rock')) {
+        return result = 'You picked Paper and beat Rock! '
+    } else if (playerSelection == 'Paper' && (compChoice == 'Paper')) {
+        return result = 'You picked Paper and drew with Paper'
+    } else if (playerSelection == 'Paper' && (compChoice == 'Scissors')) {
+        return result = 'You picked Paper and lost to Scissors'
+    } else if (playerSelection == 'Scissors' && (compChoice == 'Rock')) {
+        return result = 'You picked Scissors and lost to Rock'
+    } else if (playerSelection == 'Scissors' && (compChoice == 'Paper')) {
+        return result = 'You picked Scissors and beat Paper!'
+    } else if (playerSelection == 'Scissors' && (compChoice == 'Scissors')) {
+        return result = 'You picked Scissors and drew with Scissors'
+    } else { 
     
-    // let results = x
+}
+}
+
+playRound(playerSelection, compChoice)
+
+// let results = x
 
 
-    function game() {
-        
+function game() {
 
-        for (let i = 0; i < 5; i++) {
 
-            getComputerChoice();
-            getPlayerChoice();
-            playRound(playerSelection, compChoice);
-            console.log(result);
+    for (let i = 0; i < 5; i++) {
+
+        getComputerChoice();
+        getPlayerChoice();
+        playRound(playerSelection, compChoice);
+        console.log(result);
     }
 }
 
@@ -122,7 +121,7 @@ game()
 
 
      // the only thing that doesnt work is the else result?
-     // it doesnt say please select something better 
+     // it doesnt say please select something better
 // console each result in the game function????
 
 
